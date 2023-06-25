@@ -15,7 +15,7 @@
     border-radius: 0.5rem;
     flex-direction: column;
     align-items: center;
-    width: 25vw;
+    width: 25%;
 }
 
 .formWrapper form {
@@ -89,38 +89,17 @@
     background-color: blueviolet;
 }
 
-
-/*classes used in chat component*/
-.chat {
-    flex: 2;
-}
-
-
-.chatInfo {
-    height: 6%;
-    background-color: blueviolet;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: lightgrey
-}
-
-.chatIcons {
-    display: flex;
-    gap: 10px;
-}
-
 /*classes used in navbar component*/
 .navbar {
     display: flex;
     height: 6%;
     padding: 1rem;
-    background-color: rgb(38, 6, 68);
+    background-color: rgb(60, 60, 140);
     justify-content: center;
     justify-content: space-between;
     align-items: center;
     color: white;
+
 }
 
 .logoNavbar {
@@ -136,19 +115,115 @@
 }
 
 .user img {
-    background-color: skyblue;
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     object-fit: cover;
     border-radius: 50%;
 }
 
 .user button {
-    background-color: blueviolet;
+    background-color: rgb(190, 183, 196);
     outline: none;
     border: none;
     cursor: pointer;
 }
+
+
+
+/*classes used in search component*/
+
+.search {
+    border-bottom: 1px solid white;
+
+    .searchForm {
+        padding: 0.5rem;
+
+        // input {
+        //     // background-color: transparent;
+        // }
+    }
+
+}
+
+.userChat {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(60, 60, 140);
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .userChatInfo {
+        height: 2.8rem;
+        ;
+
+
+        span {
+            font-weight: bold;
+            // background-color: yellow;
+        }
+
+        p {
+            color: lightgray;
+            // background-color: green;
+            margin: 0;
+        }
+    }
+}
+
+
+
+
+
+
+/*classes used in chat component*/
+.chat {
+    flex: 2;
+}
+
+
+.chatInfo {
+    height: 6%;
+    background-color: blueviolet;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    justify-content: space-between;
+
+    span {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 1rem;
+    }
+}
+
+.chatIcons {
+    display: flex;
+    gap: 10px;
+}
+
+
+
 
 
 /*classes used in messageBox and messsage components*/
@@ -190,7 +265,7 @@
                 max-width: max-content;
             }
 
-            img{
+            img {
                 width: 50%;
             }
         }
@@ -231,6 +306,18 @@
     outline: none;
     border: none;
     font-size: larger;
+    display: flex;
+}
+
+.send {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        height: 24px;
+        cursor: pointer;
+    }
 }
 
 .input button {

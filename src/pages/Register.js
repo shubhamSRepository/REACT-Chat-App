@@ -4,11 +4,13 @@ import { auth, storage, db } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function Register() {
 
     const [err, setErr] = useState(false);
+    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -63,6 +65,8 @@ function Register() {
                                 /*initially leaving it blank as we have no chats in beginning */
                             })
 
+                            navigate("/");
+
                         });
                 }
             );
@@ -87,7 +91,7 @@ function Register() {
                     <input type="file" />
                     <button>Sign Up</button>
                 </form>
-                <p>You do have an account? Login</p>
+                <p>You do have an account? <Link to="/login">Login</Link> </p>
                 {err && <span>something went wrong!</span>}
 
             </div>

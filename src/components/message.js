@@ -1,21 +1,41 @@
+import { useContext, useEffect, useRef, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { ChatContext } from "../context/ChatContext";
+import { Timestamp, serverTimestamp } from "firebase/firestore";
 
 
 
-function Message() {
+function Message({ message }) {
+
+    const { currentUser } = useContext(AuthContext);
+    const { data } = useContext(ChatContext);
+
+    const ref = useRef();
+
+    useEffect(() => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    }, [message]);
+
+
     return (
-        <div className="message owner">
+        <div
+            ref={ref}
+            className={`message ${message.senderId === currentUser.uid && "owner"}`}>
 
             <div className="messageInfo">
 
-                <img src="https://media.istockphoto.com/id/1158014305/photo/headshot-of-a-teenage-boy.jpg?b=1&s=612x612&w=0&k=20&c=l065CBaRepJIyaOO6dOnCtPoAJ0OOV7oScXXO0FAcys=" />
-                <span>just now</span>
+                <img src={
+                    Message.senderId === currentUser.uid ?
+                        currentUser.photoURL : data.user.photoURL
+                } />
+                <span>{}</span>
 
             </div>
 
             <div className="messageContent">
 
-                <p>hello my name is shubham soni </p>
-                <img src="https://media.istockphoto.com/id/1158014305/photo/headshot-of-a-teenage-boy.jpg?b=1&s=612x612&w=0&k=20&c=l065CBaRepJIyaOO6dOnCtPoAJ0OOV7oScXXO0FAcys=" />
+                <p>{message.text} </p>
+                {message.img && <img src={message.img} />}
 
             </div>
 
