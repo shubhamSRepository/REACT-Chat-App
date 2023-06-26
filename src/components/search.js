@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { collection, query, where, getDoc, getDocs, serverTimestamp, doc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
 function Search() {
 
@@ -84,6 +86,7 @@ function Search() {
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
                 />
+                <button onClick={() => signOut(auth)}>Log Out</button>
             </div>
 
             {err && <span>User not found!</span>}

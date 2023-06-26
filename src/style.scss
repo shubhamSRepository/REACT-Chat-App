@@ -75,7 +75,7 @@
 
 .container {
     height: 85%;
-    width: 85%;
+    width: 55%;
     border: 1px solid white;
     border-radius: 1.375rem;
     display: flex;
@@ -112,6 +112,17 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+
+        span{
+            color: gray;
+            font-weight: 600;
+        }
+    }
 }
 
 .user img {
@@ -121,26 +132,24 @@
     border-radius: 50%;
 }
 
-.user button {
-    background-color: rgb(190, 183, 196);
-    outline: none;
-    border: none;
-    cursor: pointer;
-}
-
 
 
 /*classes used in search component*/
 
 .search {
     border-bottom: 1px solid white;
-
+    
     .searchForm {
+        display: flex;
+        justify-content: space-between;
         padding: 0.5rem;
 
-        // input {
-        //     // background-color: transparent;
-        // }
+        button {
+            background-color: rgb(190, 183, 196);
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
     }
 
 }

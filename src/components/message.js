@@ -24,10 +24,10 @@ function Message({ message }) {
 
             <div className="messageInfo">
 
-                <img src={
+                {/* <img src={
                     Message.senderId === currentUser.uid ?
-                        currentUser.photoURL : data.user.photoURL
-                } />
+                        currentUser.photo : data.user.photoURL
+                } /> */}
                 <span>{}</span>
 
             </div>
